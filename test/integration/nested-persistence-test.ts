@@ -193,7 +193,7 @@ describe('nested persistence', function() {
           ['temp-id']: 'abc3',
           id: '30',
           type: 'books',
-          attributes: { title: 'anothertitle from server' }
+          attributes: { title: 'another title from server' }
         }
       ]
     }
@@ -235,7 +235,6 @@ describe('nested persistence', function() {
     it('sends the correct payload', function(done) {
       instance.save({ with: { books: 'genre', specialBooks: true } }).then((response) => {
         expect(payloads[0]).to.deep.equal(expectedCreatePayload);
-        // expect(JSON.stringify(payloads[0])).to.equal(JSON.stringify(expectedCreatePayload));
         done();
       });
     });
