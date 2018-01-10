@@ -233,7 +233,7 @@ describe('nested persistence', function() {
     // todo remove #destroy? and just save when markwithpersisted? combo? for ombined payload
     // todo test unique includes/circular relationshio
     it('sends the correct payload', function(done) {
-      instance.save({ with: { books: 'genre', specialBooks: true } }).then((response) => {
+      instance.save({ with: { books: 'genre', specialBooks: {} } }).then((response) => {
         expect(payloads[0]).to.deep.equal(expectedCreatePayload);
         done();
       });
